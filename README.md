@@ -63,7 +63,7 @@ and the plugin will replace it in frontend HTML with (example shortened):
 ```
 
 ## Placeholders overview
-Find more placeholders here: https://ghsvs.de/media/iconsghsvs/icons-overview.html
+Find more `{svg{bi/...}}` placeholders here: https://ghsvs.de/media/iconsghsvs/icons-overview.html
 
 ----------------------
 
