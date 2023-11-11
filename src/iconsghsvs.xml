@@ -41,8 +41,13 @@
 					name="iconsGhsvsInstalled"
 					hiddenLabel="true"/>
 
+				<field name="svgSupportSpacer" type="note" close="true"
+					class="alert alert-info w-100 mb-0"
+					label="PLG_SYSTEM_ICONSGHSVS_SVGSUPPORT"
+					description="PLG_SYSTEM_ICONSGHSVS_DESC"/>
+
 				<field name="svgSupport" type="list" default="1"
-					label="SVG embedding active"
+					label="PLG_SYSTEM_ICONSGHSVS_SVGSUPPORT"
 					filter="integer">
 						<option value="0">JNO</option>
 						<option value="1">JYES</option>
