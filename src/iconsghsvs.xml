@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="{{type}}" client="{{client}}" group="{{folder}}" method="{{method}}">
+	<name>{{nameUpper}}</name>
+	<author>{{authorName}}</author>
+	<creationDate>{{creationDate}}</creationDate>
+	<copyright>{{copyright}}</copyright>
+	<license>{{licenseLong}}</license>
+	<authorUrl>{{authorUrl}}</authorUrl>
+	<version>{{version}}</version>
+	<description>{{nameUpper}}_XML_DESCRIPTION</description>
+
+	<updateservers><server type="extension" priority="1" name="{{nameUpper}}">{{xmlserver}}/{{name}}-update.xml</server></updateservers>
+
+	<infourl>{{infourl}}</infourl>
+
+	<scriptfile>installerScript.php</scriptfile>
+	<minimumPhp>{{minimumPhp}}</minimumPhp>
+	<maximumPhp>{{maximumPhp}}</maximumPhp>
+	<minimumJoomla>{{minimumJoomla}}</minimumJoomla>
+	<maximumJoomla>{{maximumJoomla}}</maximumJoomla>
+	<allowDowngrades>{{allowDowngrades}}</allowDowngrades>
+
+	<files>
+		<folder>language</folder>
+		<folder plugin="{{filename}}">services</folder>
+		<folder>src</folder>
+		<filename>installerScript.php</filename>
+		<filename>LICENSE.txt</filename>
+	</files>
+	{{namespace}}
+	<config{{addfieldprefix}}>
+		<fields name="params">
+			<fieldset name="basic">
+
+				<field type="hidden" default="1" name="{{filename}}plugin"/>
+
+				<field name="version" type="Version"
+					label="JVERSION"/>
+
+				<field type="IconsGhsvsInstalled"
+					name="iconsGhsvsInstalled"
+					hiddenLabel="true"/>
+
+				<field name="svgSupport" type="list" default="1"
+					label="SVG embedding active"
+					filter="integer">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+				<field name="svgSpan" type="list" default="1" filter="integer"
+					label="Enclosing SPAN around SVG"
+					showon="svgSupport:1">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+				<field name="svgSpanClass" type="textarea" filter="string"
+					default="svgSpan svg-lg" validate="CssIdentifier"
+					label="PLG_SYSTEM_ICONSGHSVS_SVGSPANCLASS"
+					showon="svgSupport:1[AND]svgSpan:1"
+					/>
+
+				<field name="svgRemoveSpaces" type="list" default="0"
+					label="Remove spaces and newlines around embedded SVG."
+					filter="integer"
+					showon="svgSupport:1">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+				<field name="removeTagIfNoSvg" type="list" default="1"
+					label="Remove tag/placeholder if no matching *.svg file found (Select NO for debug purposes)"
+					filter="integer"
+					showon="svgSupport:1">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+			</fieldset><!--/basic-->
+		</fields>
+	</config>
+</extension>
